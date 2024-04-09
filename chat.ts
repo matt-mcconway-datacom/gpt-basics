@@ -1,14 +1,8 @@
-import { createInterface } from "node:readline/promises";
 import { openai } from "./openai";
 import {
   ChatCompletionMessageParam,
   ChatCompletionUserMessageParam,
 } from "openai/resources";
-
-const rl = createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
 
 const newMessage = async (
   history: ChatCompletionMessageParam[],
@@ -27,6 +21,11 @@ const formatMessage = (userInput: string): ChatCompletionUserMessageParam => ({
   content: userInput,
 });
 
+process.on("SIGINT", () => {
+  console.log("\nExiting on SIGINT");
+  process.exit();
+});
+
 const chat = () => {
   const history: ChatCompletionMessageParam[] = [
     {
@@ -36,20 +35,19 @@ const chat = () => {
     },
   ];
 
-  const start = () => {
-    rl.question("You: ", async (userInput) => {
-      if (userInput.toLowerCase() === "exit") {
-        rl.close();
-        return;
+  const start = async () => {
+    process.stdout.write("You: ");
+
+    for await (const line of console) {
+      if (line.toLowerCase() === "exit") {
+        process.exit();
       }
-      const message = formatMessage(userInput);
+      const message = formatMessage(line);
       const response = await newMessage(history, message);
       history.push(message, response);
 
       console.log(`\n\nBatman: ${response.content}\n\n`);
-
-      start();
-    });
+    }
   };
 
   console.log("\n\nBatman: How can I help you today?\n\n");
