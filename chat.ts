@@ -56,6 +56,8 @@ const chat = () => {
 };
 
 console.log(
-  `I'm ${chalk.yellow("Batman")}. Ask me anything. Type 'exit' to quit.`
+  `I'm ${chalk.yellow("Batman")}. Ask me anything. Type '${chalk.bold(
+    "exit"
+  )}' to quit.`
 );
 chat();
