@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import { openai } from "./openai";
 import {
   ChatCompletionMessageParam,
@@ -46,13 +47,15 @@ const chat = () => {
       const response = await newMessage(history, message);
       history.push(message, response);
 
-      console.log(`\n\nBatman: ${response.content}\n\n`);
+      console.log(`\n\n${chalk.yellow("Batman")}: ${response.content}\n\n`);
     }
   };
 
-  console.log("\n\nBatman: How can I help you today?\n\n");
+  console.log(`\n\n${chalk.yellow("Batman")}: How can I help you today?\n\n`);
   start();
 };
 
-console.log("I'm Batman. Ask me anything. Type 'exit' to quit.");
+console.log(
+  `I'm ${chalk.yellow("Batman")}. Ask me anything. Type 'exit' to quit.`
+);
 chat();
