@@ -5,3 +5,8 @@
 3. `pnpm start`
 
 I use [ASDF](https://asdf-vm.com/) to manage toolchain versions via `.tool-versions`
+
+Running:
+
+- Chat with Batman: `bun chat.ts`
+- Semantic Search: `bun search.ts`
