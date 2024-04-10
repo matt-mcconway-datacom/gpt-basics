@@ -11,3 +11,4 @@ Running:
 - Chat with Batman: `bun chat.ts`
 - Semantic Search: `bun search.ts`
 - Document QA: `bun qa.ts "Some query"`
+- Function Calling: `bun functions.ts "What is 12 * 100 / 12 + 290 / 67 * 2?"`

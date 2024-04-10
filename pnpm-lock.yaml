@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  advanced-calculator:
+    specifier: ^1.1.1
+    version: 1.1.1
   chalk:
     specifier: ^5.3.0
     version: 5.3.0
@@ -13,7 +16,7 @@ dependencies:
     version: 16.4.5
   langchain:
     specifier: ^0.1.32
-    version: 0.1.32(pdf-parse@1.1.1)(youtube-transcript@1.0.6)(youtubei.js@9.1.0)
+    version: 0.1.32(pdf-parse@1.1.1)(youtube-transcript@1.1.0)(youtubei.js@9.2.1)
   openai:
     specifier: ^4.33.0
     version: 4.33.0
@@ -21,11 +24,11 @@ dependencies:
     specifier: ^1.1.1
     version: 1.1.1
   youtube-transcript:
-    specifier: 1.0.6
-    version: 1.0.6
+    specifier: ^1.1.0
+    version: 1.1.0
   youtubei.js:
-    specifier: 9.1.0
-    version: 9.1.0
+    specifier: ^9.2.1
+    version: 9.2.1
 
 devDependencies:
   '@types/bun':
@@ -428,6 +431,10 @@ packages:
     hasBin: true
     dev: false
 
+  /advanced-calculator@1.1.1:
+    resolution: {integrity: sha512-ak2G4Q0HkPOMrJQU3kyYyIsFHAOkp1vfsCtYF2gwSb8qAWYAmligJjJFesbsgBTDlgKFAm86b6HbGdggXOzxqA==}
+    dev: false
+
   /agentkeepalive@4.5.0:
     resolution: {integrity: sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==}
     engines: {node: '>= 8.0.0'}
@@ -475,10 +482,6 @@ packages:
   /camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
-    dev: false
-
-  /centra@2.6.0:
-    resolution: {integrity: sha512-dgh+YleemrT8u85QL11Z6tYhegAs3MMxsaWAq/oXeAmYJ7VxL3SI9TZtnfaEvNDMAPolj25FXIb3S+HCI4wQaQ==}
     dev: false
 
   /chalk@5.3.0:
@@ -616,7 +619,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.1.32(pdf-parse@1.1.1)(youtube-transcript@1.0.6)(youtubei.js@9.1.0):
+  /langchain@0.1.32(pdf-parse@1.1.1)(youtube-transcript@1.1.0)(youtubei.js@9.2.1):
     resolution: {integrity: sha512-blc/6SR08XsOU01HdCGHpxAC0sH+MxM21rYY+KQVZv3QTH1mMd/u6SG3CV0mVv9iWOkgfKc1PK/Ud3OYfvOnww==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -791,8 +794,8 @@ packages:
       pdf-parse: 1.1.1
       uuid: 9.0.1
       yaml: 2.4.1
-      youtube-transcript: 1.0.6
-      youtubei.js: 9.1.0
+      youtube-transcript: 1.1.0
+      youtubei.js: 9.2.1
       zod: 3.22.4
       zod-to-json-schema: 3.22.5(zod@3.22.4)
     transitivePeerDependencies:
@@ -1018,14 +1021,6 @@ packages:
       - supports-color
     dev: false
 
-  /phin@3.7.0:
-    resolution: {integrity: sha512-DqnVNrpYhKGBZppNKprD+UJylMeEKOZxHgPB+ZP6mGzf3uA2uox4Ep9tUm+rUc8WLIdHT3HcAE4X8fhwQA9JKg==}
-    engines: {node: '>= 8'}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    dependencies:
-      centra: 2.6.0
-    dev: false
-
   /retry@0.13.1:
     resolution: {integrity: sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==}
     engines: {node: '>= 4'}
@@ -1081,14 +1076,13 @@ packages:
     hasBin: true
     dev: false
 
-  /youtube-transcript@1.0.6:
-    resolution: {integrity: sha512-k/6uxB9voj/5astl6+q+VArX/aWHhnmle8BucvUCTYTQQEOSVlBiXkrI0KD3o8A0b44MV6q0bmVNiJFIpTlcZA==}
-    dependencies:
-      phin: 3.7.0
+  /youtube-transcript@1.1.0:
+    resolution: {integrity: sha512-q/Sk5DShr9CE1qRGO0KkBPnm7KK/dk7LV/2hZEhRsSWjHYQtCrYR/9JkviY9jziTY6W4hXR4hTUcfhMKOMaMXA==}
+    engines: {node: '>=18.0.0'}
     dev: false
 
-  /youtubei.js@9.1.0:
-    resolution: {integrity: sha512-C5GBJ4LgnS6vGAUkdIdQNOFFb5EZ1p3xBvUELNXmIG3Idr6vxWrKNBNy8ClZT3SuDVXaAJqDgF9b5jvY8lNKcg==}
+  /youtubei.js@9.2.1:
+    resolution: {integrity: sha512-ZcFq5Pcd02uZ4HT6O2NiDpizHtkc030umEwK4uaXPZYVBVEKDFkOzZTkOgusHmHanfDU4LQCLaZMDjisHUnadQ==}
     dependencies:
       jintr: 1.1.0
       tslib: 2.6.2
