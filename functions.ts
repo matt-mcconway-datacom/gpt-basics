@@ -1,6 +1,7 @@
 import { ChatCompletionMessageParam } from "openai/resources";
 import { openai } from "./openai";
 import math from "advanced-calculator";
+import chalk from "chalk";
 
 const question = process.argv[2];
 
@@ -20,6 +21,12 @@ const messages: ChatCompletionMessageParam[] = [
 const functions = {
   calculate({ expression }) {
     return math.evaluate(expression);
+  },
+  async generateImage({ prompt }) {
+    const result = await openai.images.generate({ prompt });
+    console.log(`${chalk.yellow("Prompt")}: ${prompt}`);
+    console.log(`${chalk.yellow("Result")}: ${JSON.stringify(result)}`);
+    return result.data[0].url;
   },
 };
 
@@ -46,6 +53,20 @@ const getCompletion = (messages) => {
             },
           },
           required: ["expression"], // Required parameters to run the function
+        },
+      },
+      {
+        name: "generateImage",
+        description: "Create / generate an image from a descriptive prompt",
+        parameters: {
+          type: "object",
+          properties: {
+            prompt: {
+              type: "string",
+              description: "The description of the image to generate",
+            },
+          },
+          required: ["prompt"], // Required parameters to run the function
         },
       },
     ],
