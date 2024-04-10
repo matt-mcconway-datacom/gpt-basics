@@ -46,7 +46,7 @@ const docsFromPDF = () => {
 };
 
 const loadStore = async () => {
-  // const videoDocs = await docsFromYTVideo(video); // API is broken :(
+  // const videoDocs = await docsFromYTVideo(video); // API is broken :( https://github.com/langchain-ai/langchainjs/issues/4994
   const pdfDocs = await docsFromPDF();
 
   return createStore([...pdfDocs]);
