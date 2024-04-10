@@ -10,3 +10,4 @@ Running:
 
 - Chat with Batman: `bun chat.ts`
 - Semantic Search: `bun search.ts`
+- Document QA: `bun qa.ts "Some query"`
